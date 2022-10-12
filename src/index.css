@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./font\ family/Roboto-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto-Regular;
+  /* background-color: #f2f2f2; */
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 90%;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 65%;
+  }
+}
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media screen and (max-width: 200px) {
+  html {
+    font-size: 40%;
+  }
+}

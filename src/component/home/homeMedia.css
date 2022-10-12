@@ -1,0 +1,311 @@
+@media screen and (max-width: 1200px) {
+  .timeSale {
+    width: 100%;
+  }
+  .timeSale_img {
+    width: 50%;
+  }
+  .sale_timing {
+    width: 40%;
+  }
+  .container {
+    gap: 20px;
+  }
+  .product_card {
+    margin: 0;
+    margin-left: 60px;
+    width: 25%;
+    margin-bottom: 10px;
+  }
+  .featured_product_img,
+  .featured_product_zoom {
+    width: 100%;
+    height: 280px;
+  }
+  .featured_rating {
+    padding-bottom: 5px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .imgSlider {
+    height: 350px;
+  }
+
+  .categorys {
+    flex-direction: column;
+  }
+  .category_left {
+    width: 100%;
+  }
+  .cat_women {
+    height: 500px;
+  }
+  .category_right {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .cat_article1,
+  .cat_article2 {
+    width: 380px;
+  }
+  .cat_men_text > span,
+  .cat_kid_text > span,
+  .cat_cosmetics_text > span,
+  .cat_accessories_text > span {
+    font-size: 14px;
+  }
+  .container {
+    gap: 20px;
+  }
+  .product_card {
+    margin: 0;
+    margin-left: 50px;
+    width: 25%;
+    margin-bottom: 10px;
+  }
+  .featured_product_img,
+  .featured_product_zoom {
+    width: 100%;
+    height: 230px;
+  }
+  .featured_rating {
+    padding-bottom: 5px;
+  }
+  .featured_overlay_ul {
+    left: 47%;
+  }
+  .featured_overlay {
+    width: 45px;
+    height: 45px;
+  }
+  .product_card > ul > li > a {
+    color: black;
+    padding-left: 2px;
+    position: relative;
+    left: 20%;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .imgSlider {
+    height: 300px;
+  }
+  .timeSale {
+    margin: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .timeSale_img {
+    width: 50%;
+  }
+
+  .categorys {
+    flex-direction: column;
+  }
+  .category_left {
+    width: 100%;
+  }
+  .category_right {
+    width: 100%;
+  }
+  .cat_men_text,
+  .cat_kid_text,
+  .cat_cosmetics_text,
+  .cat_accessories_text {
+    left: 5%;
+  }
+  .timeSale {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    gap: 20px;
+  }
+  .product_card {
+    margin: 0;
+    margin-left: 50px;
+    width: 25%;
+    margin-bottom: 10px;
+  }
+  .featured_product_img,
+  .featured_product_zoom {
+    width: 100%;
+    height: 230px;
+  }
+  .featured_rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-bottom: 5px;
+  }
+  .featured_overlay_ul {
+    left: 47%;
+  }
+  .featured_overlay {
+    width: 40px;
+    height: 40px;
+  }
+  .product_card > ul > li > a {
+    color: black;
+    padding-left: 2px;
+    position: relative;
+    left: 20%;
+    top: 25%;
+  }
+  .product_card:hover .featured_overlay_ul > .ani1,
+  .product_card:hover .featured_overlay_ul > .ani2,
+  .product_card:hover .featured_overlay_ul > .ani3 {
+    bottom: 70px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .imgSlider {
+    height: 230px;
+  }
+  .category_h2 {
+    text-shadow: none;
+    font-size: 18px;
+  }
+  .category_h2::after {
+    bottom: -5px;
+    width: 60px;
+  }
+  .cat_women_text > h2,
+  .cat_men_text > h2,
+  .cat_kid_text > h2,
+  .cat_cosmetics_text > h2,
+  .cat_accessories_text > h2 {
+    font-size: 35px;
+  }
+  .category_right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cat_article1 {
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .cat_men {
+    width: 100%;
+  }
+  .cat_kid {
+    width: 100%;
+  }
+  .cat_article2 {
+    width: 100%;
+    height: 300px;
+
+    flex-direction: row;
+  }
+  .cat_cosmetics,
+  .cat_accessories {
+    width: 100%;
+  }
+  .timeSale_img,
+  .sale_timing {
+    width: 100%;
+  }
+  .timeSale_img > img {
+    max-width: 100%;
+  }
+  .sale_timing {
+    margin-top: -100px;
+  }
+  .featured_products {
+    margin: 25px 37px;
+  }
+
+  .product_card {
+    margin: 0;
+    margin-left: 30px;
+    width: 35%;
+    margin-bottom: 10px;
+  }
+  .featured_product_img,
+  .featured_product_zoom {
+    width: 100%;
+    height: 230px;
+  }
+  .featured_product_name {
+    font-size: 14px;
+  }
+  .sale_title > h5 {
+    font-size: 15px;
+  }
+  .sale_title > p {
+    font: 15px;
+  }
+  .featured_product_price {
+    font-size: 15px;
+  }
+  .featured_overlay_ul {
+    left: 47%;
+  }
+  .featured_overlay {
+    width: 40px;
+    height: 40px;
+  }
+  .product_card > ul > li > a {
+    color: black;
+    padding-left: 2px;
+    position: relative;
+    left: 20%;
+    top: 25%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .imgSlider {
+    height: 200px;
+  }
+  .container {
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .product_card {
+    width: 45%;
+    margin: 0;
+  }
+  .cat_women {
+    background-size: contain;
+    height: 260px;
+  }
+  .cat_article1,
+  .cat_article2 {
+    height: 200px;
+  }
+  .cat_men,
+  .cat_kid,
+  .cat_cosmetics,
+  .cat_accessories {
+    height: 200px;
+  }
+  .featured_product_img,
+  .featured_product_zoom {
+    width: 100%;
+    height: 230px;
+  }
+  .featured_rating {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    flex-wrap: wrap;
+  }
+  .featured_overlay_ul {
+    left: 47%;
+  }
+  .featured_overlay {
+    width: 35px;
+    height: 35px;
+  }
+  .product_card > ul > li > a {
+    color: black;
+    padding-left: 2px;
+    position: relative;
+    left: 20%;
+    top: 25%;
+  }
+}
