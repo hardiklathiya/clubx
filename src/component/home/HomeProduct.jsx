@@ -13,25 +13,29 @@ export default function HomeProduct({ product }) {
     edit: false,
     color: "#ddd",
     activeColor: "#ffd700",
-    value: 4,
+    value: product.rating,
   };
   return (
     <>
       <div className="product_card">
-        <Link to={product._id}>
+        <Link to={`product/${product._id}`} target="_blank">
           <figure className="featured_product_zoom">
             <img
-              src={product.images}
+              src={product.images[0].url}
               alt={product.name}
               className="featured_product_img"
             />
           </figure>
         </Link>
-        <Link to={product._id} className="featured_product_detail">
+        <Link
+          to={product._id}
+          target="_blank"
+          className="featured_product_detail"
+        >
           <span className="featured_product_name">{product.name}</span>
           <div className="featured_rating">
             <ReactStars {...options} classNames="featured_product_rating" />
-            <span>{product.numOfReviews}</span>
+            <span>({product.numOfReviews} reviews)</span>
           </div>
           <span className="featured_product_price">₹{product.price}</span>
         </Link>

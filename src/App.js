@@ -4,23 +4,20 @@ import Footer from "./component/footer/Footer";
 import Navbar from "./component/header/Navbar";
 import Home from "./component/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NoteState from "./context/ProductState";
-import Demo from "./component/home/Demo";
+import ProductDetail from "./component/product/ProductDetail";
 
 function App() {
   return (
     <>
-      <NoteState>
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-          <BottomTop />
-          {/* <Demo /> */}
-          <Footer />
-        </BrowserRouter>
-      </NoteState>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+        </Routes>
+        <BottomTop />
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }

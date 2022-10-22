@@ -2,8 +2,9 @@ footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
+
   height: auto;
+  margin-top: 30px;
 }
 .footer_1 {
   background: url("../../images/wave.png");
@@ -398,7 +399,7 @@ footer {
   .footer_container2_1 {
     padding-right: 10px;
   }
- 
+
   .footer_3 > ul {
     width: 90%;
     justify-content: center;
@@ -624,7 +625,6 @@ footer {
   }
 }
 @media screen and (max-width: 400px) {
-  .footer_3{
-
+  .footer_3 {
   }
 }

@@ -3,7 +3,6 @@ const router = express.Router();
 const Product = require("../models/product");
 const ApiFeatures = require("../utils/ApiFeatures");
 const { auth, authRoles } = require("../middleware/auth");
-
 //* create a new product - Admin
 router
   .route("/admin/product/new")
@@ -23,7 +22,7 @@ router
 //* get all products
 router.get("/products", async (req, res) => {
   try {
-    let resultPerPage = 5;
+    let resultPerPage = 15;
     const productCount = await Product.countDocuments();
     const apiFeatures = new ApiFeatures(Product.find(), req.query)
       .search()
@@ -38,6 +37,23 @@ router.get("/products", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+//*get single  product details by id
+router.get("/product/:id", async (req, res) => {
+  try {
+    let product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(500).json({
+        success: false,
+        message: "Product not found",
+      });
+    }
+    res.status(200).json([product]);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 //* search by post request later i will implement
 // .post((req, res) => {
 //   const payload = req.body.payload;
