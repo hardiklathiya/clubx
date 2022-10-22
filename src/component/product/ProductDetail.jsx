@@ -33,6 +33,12 @@ export default function ProductDetail() {
   const { loading, product, error } = useSelector(
     (state) => state.productDetail
   );
+  const productImg = product.map((item) => {
+    return item.images[0].url;
+  });
+  // console.log(productImg); //here i can get the image
+  const [imgProd, setImgProd] = useState(productImg);
+  console.log(imgProd); //here i can't get the image
   return (
     <>
       {loading ? (
