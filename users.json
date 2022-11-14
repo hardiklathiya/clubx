@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "63234f3b3df93eccd7c318f7"
+  },
+  "name": "Lathiya hardik",
+  "email": "lathiyahardik867@gmail.com",
+  "password": "$2b$10$WRwy3znp0Ac6AHzTE6MQY.UX9b/QzJWNtEsg2iuDegfnf07NasWYG",
+  "avatar": {
+    "public_id": "thisissamplepublicid",
+    "url": "sampleUrl"
+  },
+  "role": "user",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632564a90723f05096694c35"
+  },
+  "name": "Lathiya hardik",
+  "email": "lathiyahardik86@gmail.com",
+  "password": "$2b$10$Ub9.1mO8R3RFAKg7j0B7MenrF2Kqs4CrswKE67TO.Yu40wAtCs.I2",
+  "avatar": {
+    "public_id": "thisissamplepublicid",
+    "url": "sampleUrl"
+  },
+  "role": "admin",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6364c27bec919bc834cc5fb1"
+  },
+  "name": "Jay Rakholiya",
+  "email": "jayu@gmail.com",
+  "password": "$2b$10$dphSWF55YepgvjCEp5qBAOjZjvgAP1lo3.49Sw00O2TmkKnKR0JLC",
+  "avatar": {
+    "public_id": "thisissamplepublicid",
+    "url": "sampleUrl"
+  },
+  "role": "user",
+  "__v": 0
+}]
