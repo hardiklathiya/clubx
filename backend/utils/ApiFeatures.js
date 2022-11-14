@@ -33,6 +33,7 @@ class ApiFeatures {
     // console.log(queryStr);
     return this;
   }
+
   pagination(resultPerPage) {
     let currentPage = Number(this.queryStr.page) || 1;
     const skip = resultPerPage * (currentPage - 1);

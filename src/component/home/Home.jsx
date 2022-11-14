@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import "./all.min.css";
-import ProductContext from "../../context/ProductContext";
 // Import Swiper styles
 import ImgSlider from "./ImgSlider";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,7 +23,9 @@ import { fetchProducts } from "../../reducers/productReducer";
 import Loader from "./Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-export default function Home() {
+import { Link } from "react-router-dom";
+
+function Home() {
   const [timerDays, setTimerDays] = useState();
   const [timerHours, setTimerHours] = useState();
   const [timerMinutes, setTimerMinutes] = useState();
@@ -33,10 +34,10 @@ export default function Home() {
   const [serverError, setServerError] = useState(null);
 
   const dispatch = useDispatch();
+  const { loading, products, error } = useSelector((state) => state.products);
   useEffect(() => {
     dispatch(fetchProducts());
   }, [fetchProducts]);
-  const { loading, products, error } = useSelector((state) => state.products);
   let interval;
   const starterTimer = () => {
     const countdownTimer = new Date("December 23, 2022 02:50:00").getTime();
@@ -64,17 +65,6 @@ export default function Home() {
     starterTimer();
   }, []);
 
-  // const product = {
-  //   name: "This is our best product please visit it",
-  //   images: [
-  //     {
-  //       url: "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/5/a/tr:w-550,/5a827dcNFTD_TWDR948_1.jpg?rnd=20200526195200",
-  //     },
-  //   ],
-  //   price: "30,000",
-  //   _id: "rjbgerkjlnkfsvlgnwoedv",
-  // };
-
   const server_error = () => {
     toast.error("Internal Server Error", {
       position: "bottom-right",
@@ -90,6 +80,7 @@ export default function Home() {
   useEffect(() => {
     setServerError(server_error());
   });
+
   return (
     <>
       {loading ? (
@@ -144,44 +135,54 @@ export default function Home() {
 
             <section className="categorys">
               <div className="category_left">
-                <figure className="cat_women"></figure>
-                <div className="cat_women_text">
-                  <h2>Women's fashion</h2>
-                  <span>SHOP NOW</span>
-                </div>
+                <Link to="../products/womenswear">
+                  <figure className="cat_women"></figure>
+                  <div className="cat_women_text">
+                    <h2>Women's fashion</h2>
+                    <span>SHOP NOW</span>
+                  </div>
+                </Link>
               </div>
-
               <div className="category_right">
                 <article className="cat_article1">
                   <div className="cat_men_article">
-                    <figure className="cat_men"></figure>
-                    <div className="cat_men_text">
-                      <h2>Men's fashion</h2>
-                      <span>SHOP NOW</span>
-                    </div>
+                    <Link to="../products/menswear">
+                      <figure className="cat_men"></figure>
+                      <div className="cat_men_text">
+                        <h2>Men's fashion</h2>
+                        <span>SHOP NOW</span>
+                      </div>
+                    </Link>
                   </div>
+
                   <div className="cat_kid_article">
-                    <figure className="cat_kid"></figure>
-                    <div className="cat_kid_text">
-                      <h2>Kid's fashion</h2>
-                      <span>SHOP NOW</span>
-                    </div>
+                    <Link to="../products/kidswear">
+                      <figure className="cat_kid"></figure>
+                      <div className="cat_kid_text">
+                        <h2>Kid's fashion</h2>
+                        <span>SHOP NOW</span>
+                      </div>
+                    </Link>
                   </div>
                 </article>
                 <article className="cat_article2">
                   <div className="cat_cosmetics_article">
-                    <figure className="cat_cosmetics"></figure>
-                    <div className="cat_cosmetics_text">
-                      <h2>Cosmetics</h2>
-                      <span>SHOP NOW</span>
-                    </div>
+                    <Link to="../products/cosmetics">
+                      <figure className="cat_cosmetics"></figure>
+                      <div className="cat_cosmetics_text">
+                        <h2>Cosmetics</h2>
+                        <span>SHOP NOW</span>
+                      </div>
+                    </Link>
                   </div>
                   <div className="cat_accessories_article">
-                    <figure className="cat_accessories"></figure>
-                    <div className="cat_accessories_text">
-                      <h2>Accessories</h2>
-                      <span>SHOP NOW</span>
-                    </div>
+                    <Link to="../products/accessories">
+                      <figure className="cat_accessories"></figure>
+                      <div className="cat_accessories_text">
+                        <h2>Accessories</h2>
+                        <span>SHOP NOW</span>
+                      </div>
+                    </Link>
                   </div>
                 </article>
               </div>
@@ -234,7 +235,7 @@ export default function Home() {
                 products.map((product) => (
                   <HomeProduct product={product} key={product._id} />
                 ))}
-              {error && (
+              {/* {error && (
                 <>
                   <ToastContainer>{server_error}</ToastContainer>
                   <h4 className="featured_product_error">
@@ -242,7 +243,7 @@ export default function Home() {
                     you soon with better services.
                   </h4>
                 </>
-              )}
+              )} */}
             </section>
           </main>
         </>
@@ -250,3 +251,4 @@ export default function Home() {
     </>
   );
 }
+export default Home;

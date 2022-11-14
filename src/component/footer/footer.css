@@ -241,7 +241,16 @@ footer {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+@media screen and (min-width:1200px ) and (max-width:1300px) {
+  .footer_3 {
+    position: relative;
+    top: 190px;
+  }
+  .footer_4 {
+    position: relative;
+    top: 220px;
+  }
+}
 @media screen and (min-width: 1100px) and (max-width: 1200px) {
   .footer_container1 {
     top: -60px;

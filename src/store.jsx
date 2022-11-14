@@ -6,6 +6,7 @@ export const store = configureStore({
   reducer: {
     products: productSlice,
     productDetail: productDetailReducer,
+
   },
 });
 export default store;

@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lobster&family=Mulish:wght@300;400;600&family=Open+Sans:wght@300;400&family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
 .imgSlider {
   width: 100%;
   position: relative;
-  height: 450px;
+  height: 400px;
 }
 .img_in_slider {
   width: 100%;
@@ -13,7 +14,6 @@
   color: black;
   border-radius: 50%;
   background-color: white;
-
   top: 50%;
   left: 0%;
   transform: translateY(-50%);
@@ -474,7 +474,7 @@
   height: auto;
   margin-left: 30px;
   margin-bottom: 10px;
-
+  gap: 5px;
   transition: 0.5s ease;
   position: relative;
 }
@@ -501,6 +501,11 @@
 }
 .featured_product_detail {
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-start;
+  gap: 5px;
 }
 .featured_product_name {
   text-align: center;
@@ -515,6 +520,10 @@
   gap: 5px;
   justify-content: flex-start;
   align-items: center;
+}
+.featured_rating > .customer_ratings {
+  font-size: 20px;
+  color: #faaf00;
 }
 .featured_rating > span {
   font-size: 12px;

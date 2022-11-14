@@ -20,19 +20,25 @@ router
   });
 
 //* get all products
-router.get("/products", async (req, res) => {
+router.get("/products/", async (req, res) => {
   try {
-    let resultPerPage = 15;
+    let resultPerPage = 20;
     const productCount = await Product.countDocuments();
-    const apiFeatures = new ApiFeatures(Product.find(), req.query)
+
+    let apiFeatures = new ApiFeatures(Product.find(), req.query)
       .search()
       .filter()
       .pagination(resultPerPage);
     let products = await apiFeatures.query;
-
+    let NewArrival = await Product.find().sort("-createdAt");
     //*this isn't useful for now because Product.find() searches for all the products in the database
     // const getProducts = await Product.find();
-    res.status(200).json({ products, productCount });
+    res.status(200).json({
+      products,
+      productCount,
+      resultPerPage,
+      NewArrival,
+    });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -156,7 +162,7 @@ router.put("/review", auth, async (req, res) => {
     product.reviews.forEach((rev) => {
       avg = avg + rev.rating;
     });
-    product.ratings = avg / product.reviews.length;
+    product.ratings = (avg / product.reviews.length).toFixed(1);
     await product.save({
       validateBeforeSave: false,
     });

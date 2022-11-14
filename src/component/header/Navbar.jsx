@@ -11,17 +11,19 @@ import AddBusinessIcon from "@mui/icons-material/AddBusiness";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import CloseIcon from "@mui/icons-material/Close";
 import PersonIcon from "@mui/icons-material/Person";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import Drawer from "@mui/material/Drawer";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState();
-
-  const toggleDrawer = () => {
-    setIsOpen(!isOpen);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const drawerWidth = 300;
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
+
   const inputHandle = (e) => {
     setSearch(e.target.value);
   };
@@ -49,61 +51,67 @@ export default function Navbar() {
       </header>
 
       <header className="navbar">
-        <figure className="humburger_menu" onClick={toggleDrawer}>
+        <figure className="humburger_menu" onClick={handleDrawerToggle}>
           <img src={menu} alt="" width="25px" height="25px" />
         </figure>
 
-        {/* Sider bar for navigation for mobile devices */}
-        {isOpen && (
-          <>
-            <aside className="sidebar">
-              <div className="header_siderbar">
-                <span>
-                  <h4>Sign in </h4>
-                  <PersonIcon className="user_icon_sidebar_mobile" />
-                </span>
+        <Drawer
+          variant="temporary"
+          
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          <aside className="sidebar">
+            <div className="header_siderbar">
+              <span>
+                <h4>Sign in </h4>
+                <PersonIcon className="user_icon_sidebar_mobile" />
+              </span>
 
-                <h2>
-                  <p style={{ fontSize: "18px" }}>Browse</p>
-                  ClubX
-                </h2>
-              </div>
+              <h2>
+                <p style={{ fontSize: "18px" }}>Browse</p>
+                ClubX
+              </h2>
+            </div>
 
-              <div className="sidebar_div">
-                <article className="article_1_sidebar">
-                  <h1>ClubX Home</h1>
-                  <HomeIcon className="home_icon_mobile" />
-                </article>
-                <article className="article_2_sidebar">
-                  <h1>Top Categories For You</h1>
-                  <ul>
-                    <li>Menswear</li>
-                    <li>Womenswear</li>
-                    <li>Laptop</li>
-                    <li>Mobiles</li>
-                    <li>See all Categories</li>
-                  </ul>
-                </article>
-                <article className="article_3_sidebar">
-                  <ul>
-                    <li>My Profile</li>
-                    <li>My Cart</li>
-                    <li>My Orders</li>
-                    <li>My Wishlist</li>
-                    <li>My seller Account</li>
-                    <li style={{ color: "red" }}>Logout</li>
-                  </ul>
-                </article>
-              </div>
-            </aside>
-
-            <CloseIcon
-              onClick={toggleDrawer}
-              className="close_icon_mobile_sidebar"
-            />
-          </>
-        )}
-        <BackShadow isOpen={isOpen} toggleDrawer={toggleDrawer} />
+            <div className="sidebar_div">
+              <article className="article_1_sidebar">
+                <h1>ClubX Home</h1>
+                <HomeIcon className="home_icon_mobile" />
+              </article>
+              <article className="article_2_sidebar">
+                <h1>Top Categories For You</h1>
+                <ul>
+                  <li>Menswear</li>
+                  <li>Womenswear</li>
+                  <li>Laptop</li>
+                  <li>Mobiles</li>
+                  <li>See all Categories</li>
+                </ul>
+              </article>
+              <article className="article_3_sidebar">
+                <ul>
+                  <li>My Profile</li>
+                  <li>My Cart</li>
+                  <li>My Orders</li>
+                  <li>My Wishlist</li>
+                  <li>My seller Account</li>
+                  <li style={{ color: "red" }}>Logout</li>
+                </ul>
+              </article>
+            </div>
+          </aside>
+        </Drawer>
 
         <div className="logo">
           <img src={logo} alt="clubx logo" />

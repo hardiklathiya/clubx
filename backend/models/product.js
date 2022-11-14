@@ -1,20 +1,47 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
+  brand: {
+    type: String,
+    required: [true, "Please enter a product name"],
+    trim: true,
+  },
+  seller: {
+    type: String,
+    trim: true,
+  },
+  sellerRating: {
+    type: String,
+  },
   name: {
     type: String,
     required: [true, "Please enter a product name"],
     trim: true,
   },
-  description: {
-    type: String,
-    required: [true, "Please enter a product description"],
-    trim: true,
-  },
+  description: [
+    {
+      key: {
+        type: String,
+        required: true,
+      },
+      value: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
   price: {
     type: Number,
     required: [true, "Please enter a product price"],
     maxLength: [8, "Price cannot be exceed 8 characters"],
+  },
+  mrp: {
+    type: Number,
+    maxLength: [8, "Price cannot be exceed 8 characters"],
+  },
+  discount: {
+    type: Number,
+    maxLength: [8, "Price cannot be exceed 3 characters"],
   },
   ratings: {
     type: Number,
@@ -69,12 +96,19 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
     },
   ],
   user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
     required: true,
+  },
+  isFeatured: {
+    type:Boolean
   },
   createdAt: {
     type: Date,
